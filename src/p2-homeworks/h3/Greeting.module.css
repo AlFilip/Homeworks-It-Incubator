@@ -1,5 +1,7 @@
-.someClass {
-
+.greeting {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.2rem;
 }
 
 .error {

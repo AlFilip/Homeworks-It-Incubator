@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
 }
+.superInputParent input {
+    max-width: 300px;
+}
 
 .superInput {
     font-family: inherit;
@@ -26,7 +29,9 @@
 }
 
 .error {
+    max-width: 180px;
     color: #f44336;
+    font-size: 1rem;
     border: 1px solid #f44336;
     border-radius: 3px;
     padding: 8px;
@@ -36,6 +41,7 @@
     opacity: 0; /*Элемент полностью прозрачный (невидимый)*/
     animation: show .5s 1; /* Указываем название анимации, её время и количество повторов*/
     animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+    word-wrap: break-word;
 }
 
 @keyframes show{
