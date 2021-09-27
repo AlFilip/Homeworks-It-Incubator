@@ -11,3 +11,14 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.error404{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.content404 span{
+    font-size: 200px;
+}
