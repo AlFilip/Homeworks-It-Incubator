@@ -18,7 +18,12 @@ code {
     align-content: center;
 }
 
-
 .content404 span{
     font-size: 200px;
+}
+
+.beautifulSpan {
+    color: #016282;
+    font-size: 1.5rem;
+    padding: 1rem;
 }
