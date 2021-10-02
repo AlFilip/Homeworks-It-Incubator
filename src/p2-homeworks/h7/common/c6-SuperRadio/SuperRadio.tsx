@@ -24,8 +24,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = (
         // onChange, onChangeOption
     }
 
-
-    const mappedOptions: any[] = options ? options.map((o, i) => ( // map options with key
+    const mappedOptions: JSX.Element[] = options ? options.map((o, i) => (
         <label key={name + '-' + i}>
             <input
                 type={'radio'}
