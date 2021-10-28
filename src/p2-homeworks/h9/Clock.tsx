@@ -26,24 +26,8 @@ function Clock() {
         setShow(false)
     }
 
-    const getZero = (n: number): string => n < 10 ? `0${n}` : n.toString()
-    const getStringTime = (d?: Date) => {
-        if (!d) return ''
-        const hours = d.getHours()
-        const minutes = d.getMinutes()
-        const seconds = d.getSeconds()
-        return `${getZero(hours)}:${getZero(minutes)}:${getZero(seconds)}`
-    }
-    const getStringDate = (d?: Date) => {
-        if (!d) return ''
-        const day = d.getDate()
-        const month = d.getMonth() + 1
-        const year = d.getFullYear()
-        return `${getZero(day)}/${getZero(month)}/${getZero(year)}`
-    }
-
-    const stringDate = getStringDate(date) // fix with date
-    const stringTime = getStringTime(date) // fix with date
+    const stringDate = date?.toLocaleDateString() // fix with date
+    const stringTime = date?.toLocaleTimeString() // fix with date
 
     return (
         <div>
@@ -53,11 +37,12 @@ function Clock() {
                     {stringTime}
                 </div>
 
-                {show && (
-                    <div>
-                        {stringDate}
-                    </div>
-                )}
+                <div>
+                    {
+                        show
+                        && stringDate
+                    }
+                </div>
             </div>
 
             <SuperButton onClick={start}>start</SuperButton>
