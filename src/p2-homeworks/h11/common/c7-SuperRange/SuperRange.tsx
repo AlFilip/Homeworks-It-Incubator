@@ -1,5 +1,5 @@
-import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes} from 'react'
-import s from './SuperRange.module.css'
+import React, {DetailedHTMLProps, InputHTMLAttributes} from 'react'
+import {Slider} from "@mui/material";
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
@@ -8,6 +8,7 @@ type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
 // (чтоб не писать value: string, onChange: ...; они уже все описаны в DefaultInputPropsType)
 type SuperRangePropsType = DefaultInputPropsType & { // и + ещё пропсы которых нет в стандартном инпуте
     onChangeRange?: (value: number) => void
+    max?: number
 };
 
 const SuperRange: React.FC<SuperRangePropsType> = (
@@ -19,22 +20,21 @@ const SuperRange: React.FC<SuperRangePropsType> = (
         ...restProps// все остальные пропсы попадут в объект restProps
     }
 ) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        onChange && onChange(e) // сохраняем старую функциональность
-
-        onChangeRange && onChangeRange(+e.currentTarget.value)
+    const handleChange = (event: Event, value: number | Array<number>, activeThumb: number) => {
+        onChangeRange
+        && (!restProps.max || value <= restProps.max)
+        && onChangeRange(+value)
     }
-
-    const finalRangeClassName = `${s.range} ${className ? className : ''}`
+    const value = restProps.value ? +restProps.value : 0
 
     return (
         <>
-            <input
-                type={'range'}
-                onChange={onChangeCallback}
-                className={finalRangeClassName}
-
-                {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
+            <Slider
+                value={value}
+                onChange={handleChange}
+                valueLabelDisplay="auto"
+                track={false}
+                style={{'margin': '0 2em', 'width': '200px'}}
             />
         </>
     )
