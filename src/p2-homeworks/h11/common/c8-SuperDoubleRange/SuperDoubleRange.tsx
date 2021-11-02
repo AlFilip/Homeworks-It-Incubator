@@ -1,5 +1,8 @@
 import React from 'react'
 import {Slider} from "@mui/material";
+import styled from '@emotion/styled';
+
+
 
 type SuperDoubleRangePropsType = {
     onChangeRange?: (value: Array<number>) => void
@@ -34,18 +37,29 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
         && onChangeRange(helper(value))
     }
 
+
     return (
         <>
-            <Slider
+            <CustomizedSlider
                 value={value}
                 onChange={handleChange}
                 valueLabelDisplay="auto"
                 disableSwap
                 track={false}
-                style={{'margin': '0 2em', 'width': '200px'}}
             />
         </>
     )
 }
+
+export const CustomizedSlider = styled(Slider)`
+  color: #008cba;
+  margin: 0 2em;
+  width: 200px;  
+  transition-duration: 0.4s;
+
+  :hover {
+    color: #1e6278;
+  }
+`
 
 export default SuperDoubleRange

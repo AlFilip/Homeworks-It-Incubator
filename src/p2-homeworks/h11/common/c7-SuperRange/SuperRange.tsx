@@ -1,5 +1,5 @@
 import React, {DetailedHTMLProps, InputHTMLAttributes} from 'react'
-import {Slider} from "@mui/material";
+import {CustomizedSlider} from "../c8-SuperDoubleRange/SuperDoubleRange";
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
@@ -29,7 +29,7 @@ const SuperRange: React.FC<SuperRangePropsType> = (
 
     return (
         <>
-            <Slider
+            <CustomizedSlider
                 value={value}
                 onChange={handleChange}
                 valueLabelDisplay="auto"
