@@ -34,6 +34,7 @@ const SuperRange: React.FC<SuperRangePropsType> = (
                 onChange={handleChange}
                 valueLabelDisplay="auto"
                 track={false}
+                disableSwap
                 style={{'margin': '0 2em', 'width': '200px'}}
             />
         </>

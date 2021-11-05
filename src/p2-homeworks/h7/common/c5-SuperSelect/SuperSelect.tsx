@@ -1,6 +1,9 @@
 import React, {SelectHTMLAttributes, DetailedHTMLProps, ChangeEvent} from 'react'
 
 import s from './SuperSelect.module.css'
+import themeStyle from '../../../h12/HW12.module.css'
+import {useSelector} from "react-redux";
+import {AppStateType} from "../../../h10/bll/store";
 
 type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>
 

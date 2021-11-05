@@ -6,3 +6,27 @@
     outline: none;
 }
 
+.dark {
+    border: #0A1618;
+    background-color: #6098a1;
+}
+
+.dark-text {
+    color: #c1cbce;
+}
+
+.red {
+    border: #f44336;
+}
+
+.red-text {
+    color: #ffffff;
+}
+
+.blue {
+    border: #008CBA;
+}
+
+.blue-text {
+    color: #ffffff;
+}
