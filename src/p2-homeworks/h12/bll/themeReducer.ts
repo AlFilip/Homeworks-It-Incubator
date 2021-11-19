@@ -1,7 +1,7 @@
-export type themeType = 'dark' | 'red' | 'blue'
+export type themeType = 'default' | 'dark' | 'red' | 'blue'
 
 const initState = {
-    theme: 'dark' as themeType
+    theme: 'default' as themeType
 };
 
 type themeStateType = typeof initState

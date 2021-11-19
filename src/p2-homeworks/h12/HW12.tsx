@@ -5,7 +5,7 @@ import {AppStateType} from "../h10/bll/store";
 import {changeThemeC, changeThemeType, themeType} from "./bll/themeReducer";
 import SuperSelect from "../h7/common/c5-SuperSelect/SuperSelect";
 
-const themes: themeType[] = ['dark', 'red', 'blue'];
+const themes: themeType[] = ['default', 'dark', 'red', 'blue'];
 
 function HW12() {
     const theme = useSelector<AppStateType, themeType>(state => state.theme.theme); // useSelector

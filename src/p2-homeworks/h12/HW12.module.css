@@ -1,3 +1,11 @@
+.default {
+    background: #fff;
+}
+
+.default-text {
+    color: #000;
+}
+
 .dark {
     background: #0A1618;
 }
@@ -15,7 +23,7 @@
 }
 
 .blue {
-    background: #008CBA;
+    background: #599aaf;
 }
 
 .blue-text {

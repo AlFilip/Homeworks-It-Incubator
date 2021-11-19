@@ -10,7 +10,7 @@ function App() {
     const theme = useSelector<AppStateType, themeType>(state => state.theme.theme)
 
     return (
-        <div className={s.App + ' ' + themeStyle[theme] + ' ' + themeStyle[theme + '-text']}>
+        <div className={s.App + ' ' + themeStyle[theme] + ' ' + themeStyle[`${theme}-text`]}>
             {/*<HW1/>*/}
             {/*<HW2/>*/}
             {/*<HW3/>*/}
